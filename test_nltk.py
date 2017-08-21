@@ -1,5 +1,5 @@
 import os
-from nltk import pos_tag, word_tokenize
+from nltk import pos_tag, word_tokenize, FreqDist
 
 print("Path at terminal when executing this file")
 print(os.getcwd() + "\n")
@@ -24,5 +24,5 @@ s.title() 	a titlecased version of the string s
 s.strip() 	a copy of s without leading or trailing whitespace
 s.replace(t, u) 	replace instances of t with u inside s'''
 
-fdist = nltk.FreqDist(word.lower() for word in tokens)
-print (fd.most_common(12))
+fdist = FreqDist(word.lower() for word in tokens if not [.,])
+print (fdist.most_common(12))
